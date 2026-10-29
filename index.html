@@ -4,10 +4,10 @@
   <meta name="google-site-verification" content="bf6ZT33K4QHOhZwAP1c32d6TE46X4pYRN0DkUaauV6I" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Wahat Alreamal | Expert Gypsum Fit-Outs & Partition Works</title>
+  <title>Wahat Alreamal General Maint. Cont. | Gypsum Ceilings & Fit-Outs</title>
   <!-- Comprehensive Professional SEO Meta Tags -->
   <meta name="keywords" content="Wahat Alreamal, wahatalreamal, Wahat Alreamal contracting, wahat al reamal, gypsum ceiling contractor Ajman, false ceiling Sharjah, gypsum partitions Dubai, interior fit-out UAE, building maintenance company, false ceiling installation, gypsum board ceiling contractor, drop ceiling installation services, interior painting contractors Ajman, exterior wall painting Sharjah, villa painting services Dubai, wall putty and finishing contractors, office interior fit-out contractors Ajman, shop and showroom fit-out Sharjah, glass and gypsum partition works, commercial fit-out contractors UAE, building maintenance company UAE, annual maintenance contract AMC villas Ajman, facility maintenance services Sharjah, civil maintenance and repair works, gypsum works in Ajman, gypsum works in Sharjah, gypsum works in Dubai, gypsum works in Ras Al Khaimah, false ceiling contractor RAK, painting and finishing UAE">
-  <meta name="description" content="Wahat Alreamal offers expert gypsum fit-outs, acoustic drywall partitioning, false ceilings, and general maintenance across Ajman, Sharjah, Dubai, and Ras Al Khaimah.">
+  <meta name="description" content="Wahat Alreamal offers expert false ceilings, gypsum fit-outs, drywall partitions, painting & general maintenance across Ajman, Sharjah, Dubai & Ras Al Khaimah.">
   <meta name="author" content="Wahat Alreamal General Maintenance Contracting">
   <!-- Open Graph / Social Media Sharing Tags (WhatsApp, Instagram, Facebook) -->
   <meta property="og:title" content="Wahat Alreamal General Maintenance Contracting | UAE">
@@ -112,6 +112,10 @@
     header a[href^="tel:"] {
       -webkit-tap-highlight-color: transparent;
       outline: none !important;
+    }
+    .slideshow-img, .slideshow-bg {
+      transition: opacity 0.6s ease-in-out;
+      will-change: opacity;
     }
 
     @media (max-width: 639px) {
@@ -257,7 +261,7 @@
       </h1>
 
       <p class="text-slate-600 text-[13px] xs:text-sm sm:text-base lg:text-lg max-w-3xl mx-auto mb-7 sm:mb-8 leading-relaxed px-2 sm:px-0">
-        Providing expert false ceilings, acoustic drywall partitioning, painting, and general maintenance services across Ajman, Sharjah, Dubai, and Ras Al Khaimah for commercial offices, retail shops, showrooms, warehouses, private villas, and residential flats.
+        Providing expert decorative false ceilings, drywall partitions, painting, and general maintenance services across Ajman, Sharjah, Dubai, and Ras Al Khaimah for commercial offices, retail shops, showrooms, warehouses, private villas, and residential flats.
       </p>
 
       <!-- Twin CTA Buttons -->
@@ -430,7 +434,7 @@
             "lacasa-villa-10.jpg"
           ]'>
             <img src="lacasa-villa-1.jpg" alt="" aria-hidden="true" draggable="false" class="absolute inset-0 w-full h-full object-cover blur-md scale-110 opacity-60 transition-all duration-700 slideshow-bg pointer-events-none select-none">
-            <img src="lacasa-villa-1.jpg" alt="La Casa Villa Ceiling Project" draggable="false" class="relative z-[5] w-full h-full object-contain transition-all duration-700 slideshow-img pointer-events-none select-none">
+            <img src="lacasa-villa-1.jpg" alt="La Casa Villa Ceiling Project" draggable="false" class="relative z-[5] w-full h-full object-contain slideshow-img pointer-events-none select-none">
           </div>
           <div class="p-4 sm:p-5 flex flex-col justify-between flex-grow select-none">
             <div>
@@ -458,7 +462,7 @@
             "dafza-5.jpg"
           ]'>
             <img src="dafza-1.jpg" alt="" aria-hidden="true" draggable="false" class="absolute inset-0 w-full h-full object-cover blur-md scale-110 opacity-60 transition-all duration-700 slideshow-bg pointer-events-none select-none">
-            <img src="dafza-1.jpg" alt="DAFZA Corporate Office Ceiling Project" draggable="false" class="relative z-[5] w-full h-full object-contain transition-all duration-700 slideshow-img pointer-events-none select-none">
+            <img src="dafza-1.jpg" alt="DAFZA Corporate Office Ceiling Project" draggable="false" class="relative z-[5] w-full h-full object-contain slideshow-img pointer-events-none select-none">
           </div>
           <div class="p-4 sm:p-5 flex flex-col justify-between flex-grow select-none">
             <div>
@@ -493,7 +497,7 @@
             "lacasa-flat-12.jpg"
           ]'>
             <img src="lacasa-flat-1.jpg" alt="" aria-hidden="true" draggable="false" class="absolute inset-0 w-full h-full object-cover blur-md scale-110 opacity-60 transition-all duration-700 slideshow-bg pointer-events-none select-none">
-            <img src="lacasa-flat-1.jpg" alt="La Casa Building Flat Ceiling Project" draggable="false" class="relative z-[5] w-full h-full object-contain transition-all duration-700 slideshow-img pointer-events-none select-none">
+            <img src="lacasa-flat-1.jpg" alt="La Casa Building Flat Ceiling Project" draggable="false" class="relative z-[5] w-full h-full object-contain slideshow-img pointer-events-none select-none">
           </div>
           <div class="p-4 sm:p-5 flex flex-col justify-between flex-grow select-none">
             <div>
@@ -899,6 +903,7 @@
       let currentIndex = 0;
 
       if (images && images.length > 1) {
+        // Preload images to eliminate any stutter
         images.forEach(src => {
           const imgObj = new Image();
           imgObj.src = src;
@@ -906,15 +911,21 @@
 
         setInterval(() => {
           currentIndex = (currentIndex + 1) % images.length;
-          imgElement.style.opacity = 0;
-          if (bgElement) bgElement.style.opacity = 0;
+          
+          // Quick smooth fade out
+          imgElement.style.opacity = '0';
+          if (bgElement) bgElement.style.opacity = '0';
+
+          // Swap image instantly while hidden, then fade right back in smoothly
           setTimeout(() => {
             imgElement.src = images[currentIndex];
             if (bgElement) bgElement.src = images[currentIndex];
-            imgElement.style.opacity = 1;
-            if (bgElement) bgElement.style.opacity = 0.6;
-          }, 300);
-        }, 4000);
+            
+            imgElement.style.opacity = '1';
+            if (bgElement) bgElement.style.opacity = '0.6';
+          }, 250);
+
+        }, 3200); // 3.2 seconds interval for a quicker, more fluid pace
       }
     });
 
