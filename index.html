@@ -16,6 +16,7 @@
   <meta property="og:locale" content="en_AE">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -534,7 +535,7 @@
           </div>
           
           <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-            Headquartered in Ajman, <strong>Wahat Alreamal General Maintenance Contracting</strong> was founded in <strong>2015</strong> under the direct management and on-site leadership of partners <strong>Sreedharan C and Ratheesh</strong>. For years, our specialized crews have executed complete gypsum ceilings, drywall partitioning, painting, and general maintenance projects throughout Ajman, Sharjah, Dubai, and Ras Al Khaimah.
+            Headquartered in Ajman, <strong>Wahat Alreamal General Maintenance Contracting</strong> was founded in <strong>2015</strong> under the direct management and on-site leadership of partners <strong>Sreedharan C and Ratheesh</strong>. For years, our specialized crews have executed complete gypsum ceilings, gypsum partitions, painting, and general maintenance projects throughout Ajman, Sharjah, Dubai, and Ras Al Khaimah.
           </p>
           
           <!-- Associate Firm Note -->
@@ -642,7 +643,7 @@
         <h3 class="font-heading text-2xl sm:text-3xl font-bold text-slatePrime mt-1 mb-2">Flexible Material Sourcing</h3>
         <div class="w-12 h-1 bg-champagne mx-auto rounded-full mb-3"></div>
         <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-          We provide complete direct procurement for all certified drywall, gypsum profiles, paints, and finishes. However, if clients prefer to supply their own specific materials, we fully accommodate and execute installation according to your exact preference.
+          We provide complete direct procurement for all certified gypsum boards, gypsum profiles, paints, and finishes. However, if clients prefer to supply their own specific materials, we fully accommodate and execute installation according to your exact preference.
         </p>
       </div>
 
@@ -903,7 +904,6 @@
       let currentIndex = 0;
 
       if (images && images.length > 1) {
-        // Preload images to eliminate any stutter
         images.forEach(src => {
           const imgObj = new Image();
           imgObj.src = src;
@@ -912,11 +912,9 @@
         setInterval(() => {
           currentIndex = (currentIndex + 1) % images.length;
           
-          // Quick smooth fade out
           imgElement.style.opacity = '0';
           if (bgElement) bgElement.style.opacity = '0';
 
-          // Swap image instantly while hidden, then fade right back in smoothly
           setTimeout(() => {
             imgElement.src = images[currentIndex];
             if (bgElement) bgElement.src = images[currentIndex];
@@ -925,7 +923,7 @@
             if (bgElement) bgElement.style.opacity = '0.6';
           }, 250);
 
-        }, 3200); // 3.2 seconds interval for a quicker, more fluid pace
+        }, 3200);
       }
     });
 
