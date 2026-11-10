@@ -127,14 +127,14 @@
       body > section:first-of-type {
         min-height: calc(100vh - 79px);
         min-height: calc(100svh - 79px);
-        padding-top: clamp(10px, 2.2svh, 28px) !important;
-        padding-bottom: clamp(12px, 2.5svh, 32px) !important;
+        padding-top: clamp(12px, 2.5svh, 28px) !important;
+        padding-bottom: clamp(16px, 3svh, 32px) !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: center !important;
       }
       body > section:first-of-type > div > div:nth-of-type(1) {
-        margin-bottom: clamp(10px, 2svh, 22px) !important;
+        margin-bottom: clamp(12px, 2.2svh, 22px) !important;
       }
       body > section:first-of-type h1 {
         padding-left: 0 !important;
@@ -149,24 +149,41 @@
       body > section:first-of-type p.text-slate-600 {
         font-size: clamp(12px, 1.85svh, 13.5px) !important;
         line-height: 1.55 !important;
-        margin-bottom: clamp(16px, 3svh, 32px) !important;
+        margin-bottom: clamp(16px, 3svh, 30px) !important;
       }
       body > section:first-of-type > div > div:nth-of-type(2) {
         gap: clamp(8px, 1.5svh, 14px) !important;
-        margin-bottom: clamp(16px, 3svh, 32px) !important;
+        margin-bottom: clamp(16px, 3svh, 30px) !important;
       }
       body > section:first-of-type > div > div:nth-of-type(2) a {
         height: clamp(44px, 6.8svh, 52px) !important;
       }
       body > section:first-of-type > div > div:nth-of-type(3) {
-        padding-top: clamp(12px, 2.2svh, 22px) !important;
-        gap: clamp(8px, 1.5svh, 16px) !important;
+        padding-top: clamp(14px, 2.5svh, 24px) !important;
+        row-gap: clamp(14px, 2.5svh, 22px) !important;
       }
     }
     @media (min-width: 380px) and (max-width: 639px) {
       body > section:first-of-type {
         min-height: calc(100vh - 83px);
         min-height: calc(100svh - 83px);
+      }
+    }
+    @media (min-width: 640px) {
+      body > section:first-of-type {
+        min-height: calc(100vh - 99px);
+        min-height: calc(100svh - 99px);
+        padding-top: clamp(32px, 5svh, 48px) !important;
+        padding-bottom: clamp(28px, 4.5svh, 44px) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+      }
+    }
+    @media (min-width: 1024px) {
+      body > section:first-of-type {
+        min-height: calc(100vh - 115px);
+        min-height: calc(100svh - 115px);
       }
     }
   </style>
@@ -253,7 +270,7 @@
 
   <!-- Hero Section -->
   <section class="relative bg-gradient-to-b from-slate-100 via-slate-200/50 to-slate-100 py-9 sm:py-11 lg:py-12 px-4 sm:px-6 lg:px-8 border-b border-slate-200">
-    <div class="max-w-6xl mx-auto text-center">
+    <div class="max-w-6xl mx-auto text-center w-full">
       
       <!-- Top Badge -->
       <div class="inline-flex items-center gap-1.5 sm:gap-2 py-1.5 px-4 rounded-full bg-champagne/10 border border-champagne/30 text-champagne text-[11px] sm:text-xs font-bold tracking-wide uppercase mb-5 sm:mb-6 shadow-xs">
@@ -283,24 +300,41 @@
         </a>
       </div>
 
-      <!-- Trust Metrics (Centered & Balanced 4-Item Grid) -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-5 sm:pt-6 border-t border-slate-300/60 text-left">
-        <div class="p-2 sm:px-4 sm:py-1.5 md:border-r border-slate-300/60">
-          <p class="font-heading text-base sm:text-xl font-bold text-slatePrime whitespace-nowrap">350+ Projects</p>
+      <!-- Trust Metrics (Unboxed Divider Layout + Gold Symbols + Perfectly Centered) -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-x-0 gap-y-5 max-w-4xl mx-auto pt-6 sm:pt-7 border-t border-slate-300/70">
+        
+        <div class="flex flex-col items-center justify-center text-center px-2 sm:px-4 border-r border-slate-300/70">
+          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-champagne/12 border border-champagne/30 text-champagne flex items-center justify-center text-xs sm:text-sm mb-2">
+            <i class="fa-solid fa-building-circle-check"></i>
+          </div>
+          <p class="font-heading text-base sm:text-xl font-extrabold text-slatePrime whitespace-nowrap">350+ Projects</p>
           <p class="text-[11px] sm:text-xs text-slate-500 mt-0.5">Successfully completed</p>
         </div>
-        <div class="p-2 sm:px-4 sm:py-1.5 md:border-r border-slate-300/60">
-          <p class="font-heading text-base sm:text-xl font-bold text-slatePrime whitespace-nowrap">10+ Years</p>
+
+        <div class="flex flex-col items-center justify-center text-center px-2 sm:px-4 md:border-r border-slate-300/70">
+          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-champagne/12 border border-champagne/30 text-champagne flex items-center justify-center text-xs sm:text-sm mb-2">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+          </div>
+          <p class="font-heading text-base sm:text-xl font-extrabold text-slatePrime whitespace-nowrap">10+ Years</p>
           <p class="text-[11px] sm:text-xs text-slate-500 mt-0.5">UAE field experience</p>
         </div>
-        <div class="p-2 sm:px-4 sm:py-1.5 md:border-r border-slate-300/60">
-          <p class="font-heading text-base sm:text-xl font-bold text-slatePrime whitespace-nowrap">Offices & Villas</p>
-          <p class="text-[11px] sm:text-xs text-slate-500 mt-0.5">Commercial & residential</p>
+
+        <div class="flex flex-col items-center justify-center text-center px-2 sm:px-4 border-r border-slate-300/70">
+          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-champagne/12 border border-champagne/30 text-champagne flex items-center justify-center text-xs sm:text-sm mb-2">
+            <i class="fa-solid fa-house-chimney-user"></i>
+          </div>
+          <p class="font-heading text-base sm:text-xl font-extrabold text-slatePrime whitespace-nowrap">Offices &amp; Villas</p>
+          <p class="text-[11px] sm:text-xs text-slate-500 mt-0.5">Commercial &amp; residential</p>
         </div>
-        <div class="p-2 sm:px-4 sm:py-1.5">
-          <p class="font-heading text-base sm:text-xl font-bold text-slatePrime whitespace-nowrap">Supervised</p>
+
+        <div class="flex flex-col items-center justify-center text-center px-2 sm:px-4">
+          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-champagne/12 border border-champagne/30 text-champagne flex items-center justify-center text-xs sm:text-sm mb-2">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <p class="font-heading text-base sm:text-xl font-extrabold text-slatePrime whitespace-nowrap">Supervised</p>
           <p class="text-[11px] sm:text-xs text-slate-500 mt-0.5">On-site quality inspection</p>
         </div>
+
       </div>
 
     </div>
